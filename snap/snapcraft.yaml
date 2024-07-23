@@ -1,0 +1,46 @@
+name: syft
+base: core24
+version: 'v1.9.0'
+summary: SBOM Generator
+description: |
+  CLI tool and library for generating a Software Bill of Materials from container
+  images and filesystems
+
+platforms:
+  amd64:
+    build-on: [amd64]
+    build-for: [amd64]
+  arm64:
+    build-on: [arm64]
+    build-for: [arm64]
+  armhf:
+    build-on: [armhf]
+    build-for: [armhf]
+  s390x:
+    build-for: [s390x]
+    build-on: [s390x]
+  ppc64el:
+    build-for: [ppc64el]
+    build-on: [ppc64el]
+  riscv64:
+    build-on: [riscv64]
+    build-for: [riscv64]
+
+grade: stable
+confinement: classic
+
+parts:
+  syft:
+    plugin: go
+    source: https://github.com/anchore/syft.git
+    source-type: git
+    source-tag: 'v1.9.0'
+    prime:
+      - bin/syft
+    build-snaps:
+      - go
+
+apps:
+  syft:
+    command: bin/syft
+
