@@ -26,6 +26,6 @@ jobs:
           update-script: |
             VERSION=$(
               curl -sL https://api.github.com/repos/anchore/syft/releases | 
-              jq .  | grep tag_name | grep -v beta | head -n 1 | cut -d'"' -f4 | tr -d 'v'
+              jq .  | grep tag_name | grep -v beta | head -n 1 | cut -d'"' -f4
             )
             sed -i 's/^\(version: \).*$/\1'"$VERSION"'/' snap/snapcraft.yaml
