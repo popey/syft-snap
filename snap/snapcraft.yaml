@@ -1,6 +1,6 @@
 name: syft
 base: core24
-version: 1.10.0
+version: "v1.10.0"
 summary: SBOM Generator
 description: |
   CLI tool and library for generating a Software Bill of Materials from container
@@ -32,9 +32,7 @@ confinement: classic
 parts:
   syft:
     plugin: go
-    source: https://github.com/anchore/syft.git
-    source-type: git
-    source-tag: 'v1.9.0'
+    source: https://github.com/anchore/$SNAPCRAFT_PROJECT_NAME/archive/refs/tags/$SNAPCRAFT_PROJECT_VERSION.tar.gz
     prime:
       - bin/syft
     build-snaps:
