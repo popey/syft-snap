@@ -52,5 +52,5 @@ parts:
 
 apps:
   syft:
-    command: bin/${SNAPCRAFT_PROJECT_NAME}
+    command: bin/syft
 
