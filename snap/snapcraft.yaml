@@ -1,6 +1,6 @@
 name: syft
 base: core24
-version: "v1.29.0"
+version: "v1.29.1"
 summary: SBOM Generator
 description: |
   CLI tool and library for generating a Software Bill of Materials from container
